@@ -1,0 +1,14 @@
+#Global ignore path
+.project
+.classpath
+.metadata
+.settings/
+.externalToolBuilders/
+target/
+install/
+bin/
+bin-debug/
+bin-release/
+MANIFEST.MF
+*.iml
+/.idea/

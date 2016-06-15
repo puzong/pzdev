@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scratches Chrome="/home/amarsoft/hchen/software/chromedriver" IE="/home/amarsoft/hchen/software/IEDriverServer.exe">
+	<scratchGroup>
+		<scratch name="SP" class="com.sac.scratch.rating.SPScrachImpl"/>
+		 <scratch name="Moodys" class="com.sac.scratch.rating.MoodysScrachImpl"/>
+		 <scratch name="AMBest" class="com.sac.scratch.rating.AMBestScratchImpl"/>
+	</scratchGroup>
+	<scratchGroup name="kvb">
+		<scratch name="kvb_edu" class="com.sac.scratch.kvb.EduScrachImpl"/>
+	</scratchGroup>
+	<scratchGroup>
+		<scratch name="BOC_fx" class="com.sac.scratch.fx.BOCScratchImpl"/>
+	</scratchGroup>
+	<scratchGroup name="fx168">
+		<scratch name="topNews" class="com.sac.scratch.fx168.NewsScrachImpl" scratchUrl="http://news.fx168.com/top" startDateTime="2016-04-10 00:00" module="top" />
+		<scratch name="opinion" class="com.sac.scratch.fx168.NewsScrachImpl" scratchUrl="http://news.fx168.com/opinion/" startDateTime="2016-04-10 00:00" module="opinion" />
+		<scratch name="industryNews" class="com.sac.scratch.fx168.NewsScrachImpl" scratchUrl="http://industry.fx168.com" startDateTime="2016-03-01 00:00" module="industry" />
+		<scratch name="industryPolicy" class="com.sac.scratch.fx168.NewsScrachImpl" scratchUrl="http://industry.fx168.com/policy" startDateTime="2016-01-01 00:00" module="industry" />
+	</scratchGroup>
+	<scratchGroup name="fx_message">
+		<scratch name="fx678_msg" class="com.sac.scratch.fx678.MessageScrachImpl" scratchUrl="http://kx.fx678.com" source="fx678"/>
+	</scratchGroup>
+	<scratchGroup name="fx678">
+		<scratch name="topNews" class="com.sac.scratch.fx678.TopNewsScrachImpl" scratchUrl="http://news.fx678.com" startDateTime="2016-04-01" module="news"/>
+	</scratchGroup>
+	<scratchGroup name="broker">
+		<scratch name="fx168_broker" class="com.sac.scratch.fx168.BrokerScrachImpl" scratchUrl="http://broker.fx168.com/list" source="fx168"/>
+	</scratchGroup>
+	
+	<scratchGroup name="shop">
+		<scratch name="jd" class="com.cas.scratch.shop.JingdongScrachImpl" scratchUrl="https://passport.jd.com/uc/login" userData="shop/jd.data" source="jd"/>
+		<scratch name="taobao" class="com.cas.scratch.shop.TaobaoScrachImpl" scratchUrl="https://login.taobao.com/member/login.jhtml" userData="shop/taobao.data" source="taobao"/>
+		<scratch name="yhd" class="com.cas.scratch.shop.YhdScrachImpl" scratchUrl="https://passport.yhd.com/passport/login_input.do" userData="shop/yhd.data" source="yhd"/>
+	</scratchGroup>
+	<scratchGroup name="mail">
+		<scratch name="163" class="com.cas.scratch.mail.WangyiScrachImpl" scratchUrl="http://mail.163.com/" userData="mail/163.data" source="163"/>
+		<scratch name="qq" class="com.cas.scratch.mail.QQScrachImpl" scratchUrl="https://mail.qq.com/cgi-bin/loginpage?lang=cn" userData="mail/qq.data" source="qq"/>
+		<scratch name="aliyun" class="com.cas.scratch.mail.AliyunScrachImpl" scratchUrl="https://mail.aliyun.com/" userData="mail/aliyun.data" source="aliyun"/>
+		<scratch name="sina" class="com.cas.scratch.mail.SinaScrachImpl" scratchUrl="http://mail.sina.com.cn/" userData="mail/sina.data" source="sina"/>
+		<scratch name="sohu" class="com.cas.scratch.mail.SohuScrachImpl" scratchUrl="http://mail.sohu.com/" userData="mail/sohu.data" source="sohu"/>
+	</scratchGroup>
+	<scratchGroup name="poi">
+		<scratch name="poi" class="com.cas.scratch.poi.PoiScratchImpl" scratchUrl="http://www.poi86.com/" source="poi86"/>
+	</scratchGroup>
+	<scratchGroup name="sb">
+		<scratch name="sb" class="com.cas.scratch.sb.SbScrachImpl" scratchUrl="http://www.12333sh.gov.cn/sbsjb/wzb/226.jsp" userData="sb.data"/>
+		<scratch name="gjj" class="com.cas.scratch.sb.GjjScrachImpl" scratchUrl="https://persons.shgjj.com/SsoLogin?url=https://persons.shgjj.com/MainServlet?ID=1" userData="gjj.data"/>
+		<scratch name="tax" class="com.cas.scratch.sb.TaxScrachImpl" scratchUrl="https://gr.tax.sh.gov.cn/pages/geren/login.xhtml" userData="tax.data"/>
+	</scratchGroup>
+	<scratchGroup name="credit">
+		<scratch name="credit" class="com.cas.scratch.credit.CreditScrachImpl" scratchUrl="https://ipcrs.pbccrc.org.cn/" userData="credit.data"/>
+		<scratch name="zdw" class="com.cas.scratch.credit.ZdwScrachImpl" scratchUrl="http://www.zhongdengwang.org.cn/zhongdeng/index.shtml" userData="zdw.data"/>
+	</scratchGroup>
+	<scratchGroup name="mobile">
+		<scratch name="cmcc" class="com.cas.scratch.mobile.CmccScrachImpl" scratchUrl="https://sh.ac.10086.cn/login" userData="mobile/cmcc.data"/>
+		<scratch name="cucc" class="com.cas.scratch.mobile.CuccScrachImpl" scratchUrl="https://uac.10010.com/portal/mallLogin.jsp?redirectURL=http://www.10010.com" userData="mobile/cucc.data"/>
+		<scratch name="ctcc" class="com.cas.scratch.mobile.CtccScrachImpl" scratchUrl="http://login.189.cn/login" userData="mobile/ctcc.data"/>
+	</scratchGroup>
+</scratches>

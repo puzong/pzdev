@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+      http://www.springframework.org/schema/beans
+      http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+      http://www.springframework.org/schema/context
+      http://www.springframework.org/schema/context/spring-context-4.0.xsd
+      http://www.springframework.org/schema/aop
+      http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+      http://www.springframework.org/schema/tx
+      http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+
+	<!-- Database configuration -->
+	<context:property-placeholder location="classpath:config/database.properties" />
+
+	<!-- Spring Data Source -->
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${jdbc.driverClassName}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+	</bean>
+
+	<!-- Hibernate Session Factory -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="packagesToScan" value="com.sac.persistence.entity" />
+		<property name="hibernateProperties">
+			<props>
+				<!-- JDBC connection pool (use the built-in) -->
+				<prop key="hibernate.connection.pool_size">1</prop>
+				<!-- Disable the second-level cache -->
+				<prop key="hibernate.cache.provider_class">org.hibernate.cache.NoCacheProvider</prop>
+				<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+				<!-- <prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop> -->
+			</props>
+		</property>
+	</bean>
+
+	<!-- Transaction Manager -->
+	<bean id="txManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- Transaction based on annotation -->
+	<tx:annotation-driven transaction-manager="txManager" />
+
+	<!-- Spring Annotated Components -->
+	<context:component-scan base-package="com.sac.persistence.dao"></context:component-scan>
+	<context:component-scan base-package="com.sac.scratch.service"></context:component-scan>
+</beans>
